@@ -29,12 +29,13 @@ function isPalindrome(stringa) {
 
 
 buttonElement.addEventListener('click', function () {
-    const userWord = inputElement.value;
-
+    let inputWord = inputElement.value;
+    let userWord = inputWord.toLowerCase();
+    console.log(userWord)
     if (isPalindrome(userWord) === true) {
-        displayElement.innerHTML = `La parola è palindrome`
+        displayElement.innerHTML = `La parola è palindroma`
     } else {
-        displayElement.innerHTML = `La parola non è palindrome`
+        displayElement.innerHTML = `La parola non è palindroma`
     }
 
     console.log(isPalindrome(userWord));

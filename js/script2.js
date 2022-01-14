@@ -20,7 +20,7 @@ let sum = 0;
 //Funzione numero random
 
 function cpuNum(min, max) {
-    const rndNum = Math.floor(Math.random() * max - min) + min;
+    const rndNum = Math.floor(Math.random() * (max - min)) + min;
 
     return rndNum
 }
@@ -32,23 +32,29 @@ buttonElement.addEventListener('click', function () {
     const cpuNumber = parseInt(cpuNum(1, 5))
     const option = selectElement.value;
 
-    cpuElement.innerText = "Il computer ha scelto: " + cpuNumber;
-    sum = userNumber + cpuNumber;
-
-    resultElement.innerText = "La somma dei vostri numeri è " + sum;
-
-    if (option == "dispari" && sum % 2) {
-        winnerElement.innerText = "Hai vinto!";
-        loserElement.innerText = "";
-    } else if (option == "pari" && sum % 2) {
-        loserElement.innerText = "Hai perso!"
-        winnerElement.innerText = "";
-    } else if (option == "pari" && sum % 2 == 0) {
-        winnerElement.innerText = "Hai vinto!"
-        loserElement.innerText = "";
+    if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
+        alert("Inserisci un numero da 1 a 5!")
     } else {
-        loserElement.innerText = "Hai perso!"
-        winnerElement.innerText = "";
+
+
+        cpuElement.innerText = "Il computer ha scelto: " + cpuNumber;
+        sum = userNumber + cpuNumber;
+
+        resultElement.innerText = "La somma dei vostri numeri è " + sum;
+
+        if (option == "dispari" && sum % 2) {
+            winnerElement.innerText = "Hai vinto!";
+            loserElement.innerText = "";
+        } else if (option == "pari" && sum % 2) {
+            loserElement.innerText = "Hai perso!"
+            winnerElement.innerText = "";
+        } else if (option == "pari" && sum % 2 == 0) {
+            winnerElement.innerText = "Hai vinto!"
+            loserElement.innerText = "";
+        } else {
+            loserElement.innerText = "Hai perso!"
+            winnerElement.innerText = "";
+        }
     }
 
 
