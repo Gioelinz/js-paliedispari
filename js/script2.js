@@ -15,5 +15,9 @@ const resultElement = document.getElementById("result-element");
 //Funzione numero random
 
 function cpuNum() {
+    const rndNum = Math.floor(Math.random() * 5) + 1;
 
+    return rndNum
 }
+
+console.log(cpuNum())
