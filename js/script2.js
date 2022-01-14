@@ -14,7 +14,7 @@ const buttonElement = document.getElementById("button");
 const cpuElement = document.getElementById("cpu-element");
 const resultElement = document.getElementById("result-element");
 const winnerElement = document.getElementById("winner-element");
-
+const loserElement = document.getElementById("loser-element");
 let sum = 0;
 
 //Funzione numero random
@@ -36,4 +36,20 @@ buttonElement.addEventListener('click', function () {
     sum = userNumber + cpuNumber;
 
     resultElement.innerText = "La somma dei vostri numeri è " + sum;
+
+    if (option == "dispari" && sum % 2) {
+        winnerElement.innerText = "Hai vinto!";
+        loserElement.innerText = "";
+    } else if (option == "pari" && sum % 2) {
+        loserElement.innerText = "Hai perso!"
+        winnerElement.innerText = "";
+    } else if (option == "pari" && sum % 2 == 0) {
+        winnerElement.innerText = "Hai vinto!"
+        loserElement.innerText = "";
+    } else {
+        loserElement.innerText = "Hai perso!"
+        winnerElement.innerText = "";
+    }
+
+
 })
