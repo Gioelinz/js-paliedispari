@@ -23,9 +23,15 @@
     <!-- !Script2 -->
     <div class="container text-center">
         <h2>Inserisci un numero da 1 a 5</h2>
-        <input type="number" id="user-number" min="1" max="5">
+        <select id="select">
+            <option value="pari">Pari</option>
+            <option value="dispari">Dispari</option>
+        </select>
+        <input type="number" id="user-number" min="1" max="5" value="1"> <br>
+        <button id="button" class="btn btn-sm btn-outline-primary mt-3">Gioca</button>
         <h6 id="cpu-element" class="mt-3"></h6>
-        <h4 id="result-element" class="mt-2 text-danger"></h4>
+        <h4 id="result-element" class="mt-2 text-warning"></h4>
+        <h3 id="winner-element" class="mt-2 text-success"></h3>
     </div>
 
 

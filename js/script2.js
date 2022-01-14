@@ -9,8 +9,12 @@ Dichiariamo chi ha vinto */
 //target elementi dom
 
 const numberElement = document.getElementById("user-number");
+const selectElement = document.getElementById("select");
+const buttonElement = document.getElementById("button");
 const cpuElement = document.getElementById("cpu-element");
 const resultElement = document.getElementById("result-element");
+
+let sum = 0;
 
 //Funzione numero random
 
@@ -21,3 +25,12 @@ function cpuNum() {
 }
 
 console.log(cpuNum())
+
+buttonElement.addEventListener('click', function () {
+    const num = numberElement.value;
+    const option = selectElement.value;
+
+    cpuElement.innerText = "Il computer ha scelto: " + cpuNum();
+
+
+})
