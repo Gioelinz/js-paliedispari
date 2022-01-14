@@ -13,24 +13,27 @@ const selectElement = document.getElementById("select");
 const buttonElement = document.getElementById("button");
 const cpuElement = document.getElementById("cpu-element");
 const resultElement = document.getElementById("result-element");
+const winnerElement = document.getElementById("winner-element");
 
 let sum = 0;
 
 //Funzione numero random
 
-function cpuNum() {
-    const rndNum = Math.floor(Math.random() * 5) + 1;
+function cpuNum(min, max) {
+    const rndNum = Math.floor(Math.random() * max - min) + min;
 
     return rndNum
 }
 
-console.log(cpuNum())
+console.log(cpuNum(1, 5))
 
 buttonElement.addEventListener('click', function () {
-    const num = numberElement.value;
+    const userNumber = parseInt(numberElement.value);
+    const cpuNumber = parseInt(cpuNum(1, 5))
     const option = selectElement.value;
 
-    cpuElement.innerText = "Il computer ha scelto: " + cpuNum();
+    cpuElement.innerText = "Il computer ha scelto: " + cpuNumber;
+    sum = userNumber + cpuNumber;
 
-
+    resultElement.innerText = "La somma dei vostri numeri è " + sum;
 })
