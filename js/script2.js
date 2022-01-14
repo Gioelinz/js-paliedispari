@@ -39,10 +39,19 @@ buttonElement.addEventListener('click', function () {
 
         cpuElement.innerText = "Il computer ha scelto: " + cpuNumber;
         sum = userNumber + cpuNumber;
+        let evenOdd = pod(sum);
 
         resultElement.innerText = "La somma dei vostri numeri è " + sum;
 
-        if (option == "dispari" && sum % 2) {
+        if (option == evenOdd) {
+            winnerElement.innerText = "Hai vinto!";
+            loserElement.innerText = "";
+        } else {
+            loserElement.innerText = "Hai perso!"
+            winnerElement.innerText = "";
+        }
+
+        /* if (option == "dispari" && sum % 2) {
             winnerElement.innerText = "Hai vinto!";
             loserElement.innerText = "";
         } else if (option == "pari" && sum % 2) {
@@ -54,8 +63,14 @@ buttonElement.addEventListener('click', function () {
         } else {
             loserElement.innerText = "Hai perso!"
             winnerElement.innerText = "";
-        }
+        } */
     }
-
-
 })
+
+// restituisce pari o dispari
+function pod(numero) {
+    if (numero % 2 == 0)
+        return "pari";
+    else
+        return "dispari";
+}
