@@ -20,7 +20,7 @@ let sum = 0;
 //Funzione numero random
 
 function cpuNum(min, max) {
-    const rndNum = Math.floor(Math.random() * (max - min)) + min;
+    const rndNum = Math.floor(Math.random() * (max - min + 1)) + min;
 
     return rndNum
 }
